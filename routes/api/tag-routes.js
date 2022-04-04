@@ -61,7 +61,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
     const tagName = req.body.tag_name;
@@ -94,7 +94,7 @@ router.put('/:id', (req, res) => {
   }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
   try {
     // This approach is called to delete all the references related to the product_tag table
