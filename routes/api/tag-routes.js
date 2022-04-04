@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   try {
@@ -42,7 +42,7 @@ router.get('/:id', (req, res) => {
   }
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   // create a new tag
   try {
     const newTag = req.body.tag_name;
@@ -64,20 +64,64 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   try {
+    const tagName = req.body.tag_name;
 
+    if (tagName) {
+      const updateTag = await Tag.update(
+        {tag_name: tagName},
+        {
+          where: {
+            id: req.params.id
+          }
+        }
+      );
+
+      if (!updateTag[0]) {
+        res.status(404).json({message: 'There is no tag in existence with the id requested!'});
+      }
+    
+      else {
+        res.status(200).json(updateTag);
+      }
+    }
+    else {
+      res.status(404).json({message: 'The request body must have the tag_name!'})
+    }
   }
   catch (err) {
-    
+    console.log('Error in updating the tag_name based on its id!')
+    res.status(500).json(err)
   }
 });
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
   try {
+    // This approach is called to delete all the references related to the product_tag table
+    await ProductTag.destroy({
+      where: {
+        tag_id: req.params.id
+      }
+    });
 
+    const deleteTag = await Tag.destroy(
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    );
+
+    if (!deleteTag) {
+      res.status(404).json({message: "There is no tag in existence with the id requested!"})
+    }
+    else {
+      res.status(200).json(deleteTag);
+    }
   }
   catch (err) {
-    
+    console.log(`Error in deleting the tag: ${err}`);
+    res.status(500).json(err);
   }
 });
 
