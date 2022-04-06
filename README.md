@@ -25,11 +25,20 @@ SO THAT the manager can utilize their latest technologies and compete with other
 <br>
 2) Once downloaded, copy the code "npm install" and paste inside the terminal of your code editor
 
+
 ```bash
 npm install
 ```
 <br>
-3) Once step 2 is completed, copy the code "node server.js" and paste inside the terminal to begin running the server
+3) Once step 2 is completed, copy the code "node seeds/index.js" and paste inside the terminal to sync the seed data
+
+
+```bash
+node seeds/index.js
+```
+<br>
+4) Once step 3 is completed, copy the code "node server.js" and paste inside the terminal to begin running the server
+
 
 ```bash
 node server.js
