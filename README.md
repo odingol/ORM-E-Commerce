@@ -49,11 +49,14 @@ node server.js
     
 This app is designed to create a professional E-Commerce website using an Express.js API, Sequelize, and a MySQL database in order to successfully create, update, and delete data in the user's database 
 
-[CLICK HERE]() if you would like to follow along on YouTube.
+[CLICK HERE](https://www.youtube.com/watch?v=jevL79M-LYg) if you would like to follow along with PART 1 of the demo on YouTube.
+<br>
+
+[CLICK HERE](https://www.youtube.com/watch?v=TArjyY7C8Z4) if you would like to follow along with PART 2 of the demo on YouTube.
 
 <br>Here is an image of the application:
 
-![E-Commerce App Demo]()
+![E-Commerce App Demo](./img/e-comm-img.jpeg)
 
 <br><br>
     
