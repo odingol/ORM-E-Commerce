@@ -14,7 +14,6 @@ SO THAT the manager can utilize their latest technologies and compete with other
 - [Usage](#usage)
 - [License](#license)
 - [Contribute](#contribute)
-- [Tests](#tests)
 - [Questions](#questions)
     
 ## Installation
