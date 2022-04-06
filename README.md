@@ -29,18 +29,16 @@ SO THAT the manager can utilize their latest technologies and compete with other
 npm install
 ```
 <br>
-3) Once step 2 is completed, copy the code "node server.js" and paste inside the terminal to begin answering the prompt questions for the HTML page.
+3) Once step 2 is completed, copy the code "node server.js" and paste inside the terminal to begin running the server
 
 ```bash
 node server.js
 ```
 <br>
-4) After all questions are completed...
-<br>
     
  ## Usage
     
-This app is designed to create a professional E-Commerce website using an Express.js API, Sequelize, and MySQL database in order to perform...
+This app is designed to create a professional E-Commerce website using an Express.js API, Sequelize, and a MySQL database in order to successfully create, update, and delete data in the user's database 
 
 [CLICK HERE]() if you would like to follow along on YouTube.
 
